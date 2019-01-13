@@ -1,2 +1,1 @@
-# DecentralizedStartNotaryServiceProject
-Decentralized Start Notary Service Project
+# Decentralized Star Notary Service - Starter Code
