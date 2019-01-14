@@ -1,11 +1,13 @@
 pragma solidity ^0.4.23;
 
+// https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC721/ERC721.sol
 import 'openzeppelin-solidity/contracts/token/ERC721/ERC721.sol';
 
 contract StarNotary is ERC721 {
 
     struct Star {
         string name;
+        //string symbol;
     }
 
     //  Add a name and a symbol for your starNotary tokens
@@ -16,6 +18,7 @@ contract StarNotary is ERC721 {
     mapping(uint256 => uint256) public starsForSale;
 
     function createStar(string _name, uint256 _tokenId) public {
+        //Star memory newStar = Star(_name, _symbol);
         Star memory newStar = Star(_name);
 
         tokenIdToStarInfo[_tokenId] = newStar;

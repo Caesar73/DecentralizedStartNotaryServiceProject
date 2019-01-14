@@ -64,6 +64,7 @@ contract('StarNotary', async (accs) => {
   });
 
   // Write Tests for:
+  // I use truffle here
 
   // 1) The token name and token symbol are added properly.
   it('token name and token symbol are added properly', async() => {
