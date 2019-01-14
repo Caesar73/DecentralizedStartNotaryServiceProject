@@ -8,9 +8,9 @@ contract StarNotary is ERC721 {
         string name;
     }
 
-//  Add a name and a symbol for your starNotary tokens
-
-//
+    //  Add a name and a symbol for your starNotary tokens
+    string public constant name = "Caesar Star";
+    string public constant symbol = "KING";
 
     mapping(uint256 => Star) public tokenIdToStarInfo;
     mapping(uint256 => uint256) public starsForSale;
@@ -23,9 +23,12 @@ contract StarNotary is ERC721 {
         _mint(msg.sender, _tokenId);
     }
 
-// Add a function lookUptokenIdToStarInfo, that looks up the stars using the Token ID, and then returns the name of the star.
-
-//
+    // Add a function lookUptokenIdToStarInfo,
+    // that looks up the stars using the Token ID,
+    // and then returns the name of the star.
+    function lookUptokenIdToStarInfo(uint256 _tokenId) view public returns (string result) {
+        result = tokenIdToStarInfo[_tokenId].name;
+    }
 
     function putStarUpForSale(uint256 _tokenId, uint256 _price) public {
         require(ownerOf(_tokenId) == msg.sender);
@@ -51,13 +54,42 @@ contract StarNotary is ERC721 {
         starsForSale[_tokenId] = 0;
       }
 
-// Add a function called exchangeStars, so 2 users can exchange their star tokens...
-//Do not worry about the price, just write code to exchange stars between users.
+    // Add a function called exchangeStars,
+    // so 2 users can exchange their star tokens...
+    // Do not worry about the price,
+    // just write code to exchange stars between users.
+    function exchangeStars(uint256 _tokenId1, uint256 _tokenId2) public {
+        //Check Owner
+        require(ownerOf(_tokenId1) == msg.sender);
 
-//
+        //Get Addresses
+        address star1Owner = ownerOf(_tokenId1);
+        address star2Owner = ownerOf(_tokenId2);
 
-// Write a function to Transfer a Star. The function should transfer a star from the address of the caller.
-// The function should accept 2 arguments, the address to transfer the star to, and the token ID of the star.
-//
+        //Remove
+        _removeTokenFrom(star1Owner, _tokenId1);
+        _removeTokenFrom(star2Owner, _tokenId2);
+
+        //Exchnaged
+        _addTokenTo(star1Owner, _tokenId2);
+        _addTokenTo(star2Owner, _tokenId1);
+
+    }
+
+    // Write a function to Transfer a Star.
+    // The function should transfer a star from the address of the caller.
+    // The function should accept 2 arguments,
+    // the address to transfer the star to, and the token ID of the star.
+    function transferStar(address _receiver, uint256 _tokenId) public {
+        //Check Owner
+        require(ownerOf(_tokenId) == msg.sender);
+
+        //Remove
+        _removeTokenFrom(msg.sender, _tokenId);
+
+        //Transfer
+        _addTokenTo(_receiver, _tokenId);
+
+    }
 
 }
