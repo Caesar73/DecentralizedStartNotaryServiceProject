@@ -4,6 +4,6 @@
 
 ### ERC-721 Token Symbol = "KING"
 
-### Token Address” on the rinkeby Network = "0x40f1E995Da6bd96C681079946aF5553cFe9B89e3"
+### Token Address” on the rinkeby Network = "0x8e8970b4f549efe1dcec3114984436c00423f0c4"
 
-### link = [https://ropsten.infura.io/v3/219885d3695c4c369ce8c85d5280c38b](https://ropsten.infura.io/v3/219885d3695c4c369ce8c85d5280c38b)
+### link = [https://ropsten.etherscan.io/address/0xf7d435234783de04e20670461c513fa0978f8fdb](https://ropsten.etherscan.io/address/0xf7d435234783de04e20670461c513fa0978f8fdb)

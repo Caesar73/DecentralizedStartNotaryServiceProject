@@ -14,14 +14,14 @@ module.exports = {
       network_id: "*",       // Any network (default: none)
     },
 
-    rinkeby: {
+    ropsten: {
       provider: function() {
         return new HDWalletProvider(
           "cover general conduct soccer veteran mechanic layer fiscal limb fever deposit leader",
           "https://ropsten.infura.io/v3/219885d3695c4c369ce8c85d5280c38b"
         )
       },
-      network_id: '4',
+      network_id: '3',
       gas: 4500000,
       gasPrice: 10000000000,
     }
