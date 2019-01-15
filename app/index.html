@@ -3,36 +3,52 @@
 <head>
   <title>StarNotary DAPP Front End</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
   <script src="./app.js"></script>
 </head>
 <body>
-  <h1>StarNotary Token DAPP</h1>
 
-  <hr>
+<div class="container-fluid">
 
-  <br>
+<div class="row">
+  <div class="col-12">
+    <hr>
+    <h1>StarNotary Token DAPP</h1>
+    <hr>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+
+    <hr>
     <h1>Create a Star</h1>
-    <br><label for="starName">Star Name:</label><input type="text" id="starName"></input>
-    <br><label for="starId">Star ID:</label><input type="text" id="starId"></input>
-    <br><br><button id="createStar" onclick="App.createStar()">Create Star</button>
-    <br><br>
-    <br>
+    <hr>
+      <br><label for="starName">Star Name:</label><input type="text" id="starName"></input>
+      <br><label for="starId">Star ID:</label><input type="text" id="starId"></input>
+      <br><br><button id="createStar" onclick="App.createStar()">Create Star</button>
+      <br><br>
+      <br>
+      <span id="status"></span>
 
-    <span id="status"></span>
+  </div>
+  <div class="col-6">
 
-<!--Add an input box and a button to Lookup a star by ID using tokenIdToStarInfo-->
-  <hr>
-
+    <!--Add an input box and a button to Lookup a star by ID using tokenIdToStarInfo-->
+    <hr>
     <h1>Lookup Star Info</h1>
-    <br><label for="starId-lookUpStar">Star ID:</label><input type="text" id="starId-lookUpStar"></input>
-    <br><br><button id="lookUpStar" onclick="App.lookUpStar()">LookUp Star</button>
-    <br><br>
-    <br>
+    <hr>
+      <br><label for="starId-lookUpStar">Star ID:</label><input type="text" id="starId-lookUpStar"></input>
+      <br><br><button id="lookUpStar" onclick="App.lookUpStar()">LookUp Star</button>
+      <br><br>
+      <br>
+      <span id="lookUpStarName"></span>
 
-    <span id="lookUpStarName"></span>
+  </div>
+</div>
 
-</br></br>
+</div>
 
-    <br>
 </body>
 </html>

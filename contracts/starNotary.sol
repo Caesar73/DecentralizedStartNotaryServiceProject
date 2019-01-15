@@ -73,6 +73,9 @@ contract StarNotary is ERC721 {
         _removeTokenFrom(star1Owner, _tokenId1);
         _removeTokenFrom(star2Owner, _tokenId2);
 
+        // It is recommended that you use specialized functions for transferring tokens
+        // like the safeTransferFrom from ERC721
+
         //Exchnaged
         _addTokenTo(star1Owner, _tokenId2);
         _addTokenTo(star2Owner, _tokenId1);
